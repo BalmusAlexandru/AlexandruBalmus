@@ -16,12 +16,12 @@ try {
     $conn->exec("USE $dbname");
 }
 
-// Now, check if the tables exist, if not, create them
+
 $tables = ['mitarbeiter', 'zeiterfassung'];
 foreach ($tables as $table) {
     $stmt = $conn->query("SHOW TABLES LIKE '$table'");
     if ($stmt->rowCount() == 0) {
-        // Table doesn't exist, create it
+       
         if ($table == 'mitarbeiter') {
             $conn->exec("
             CREATE TABLE mitarbeiter (
@@ -62,3 +62,4 @@ if ($row['count'] == 0) {
 date_default_timezone_set('Europe/Berlin');
 
 ?>
+
