@@ -45,7 +45,7 @@ foreach ($tables as $table) {
     }
 }
 
-// Now, check if the mitarbeiter table has data, if not, insert sample data
+
 $stmt = $conn->query("SELECT COUNT(*) as count FROM mitarbeiter");
 $row = $stmt->fetch();
 if ($row['count'] == 0) {
@@ -60,4 +60,5 @@ if ($row['count'] == 0) {
 }
 
 date_default_timezone_set('Europe/Berlin');
+
 ?>
